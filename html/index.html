@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách lương nhân viên</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnCNL").click(function(){
+                $("#myModal").modal('show')
+            });
+            $("#close").click(function(){
+                $("#myModal").modal('hide')
+            });
+        });
+    </script>
+    <style>
+        [class*="col-"] {
+            padding-right: 5px;
+            padding-left: 5px;
+        }
+        li {
+            width: 150px;
+        }
+        a{
+            text-decoration: none;
+        }
+        #form1 {
+            height: 670px;
+        }
+        #checkbox{
+            width: 15px;
+            a{
+            text-decoration: none;}
+            height: 15px;
+        }
+        #ft {
+            margin-left: 20%;
+        }
+        h2 {
+            text-align: center;
+            color: rgb(4, 8, 14);
+            background-color: rgb(141, 177, 244);
+        }
+        span{
+            color:red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container border">
+        <div class="row">
+            <div class="header">
+                <h2>DANH SÁCH LƯƠNG NHÂN VIÊN</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="footer"></div>
+        </div>
+        <div class="row">
+            <nav class="navbar">
+                <ul class="nav nav-navbar navbar-expand">
+                    <li class="nav-item"><a href="#">Trang chủ</a></li>
+                    <li class="nav-item"><a href="#">Thông tin</a></li>
+                    <li class="nav-item"><a href="#" id="btnCNL">Cập nhật lương</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="row">
+            <table class="table-bordered table-light table-hover tale-primary table table-striped" id="tbDanhSach">
+                <tr>
+                    <th>STT</th>
+                    <th>Mã nhân sự</th>
+                    <th>Họ tên</th>
+                    <th>Ngày hợp đồng</th>
+                    <th>Chức vụ</th>
+                    <th>Bậc lương</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>912345678</td>
+                    <td>Hoàng Minh Vương</td>
+                    <td>12/5/2000</td>
+                    <td>Nhân viên</td>
+                    <td>1.86</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>THÔNG TIN NHÂN VIÊN</h5>
+                            <button type="button" class="btn-close" id="close" data-dismiss="modal" aria-label="close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" class="form-control">
+                                <div class="row form-group p-1">
+                                    <div class="col-3 col-sm-3">
+                                        <label for="">Mã nhân viên</label>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <input type="text" class="form-control" id="txtMa" placeholder="Mã nhân sự">
+                                    </div>
+                                    <div class="col-3 col-sm-3">
+                                        <span id="tbMa">(*)</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group p-1">
+                                    <div class="col-3 col-sm-3">
+                                        <label for="">Tên nhân viên</label>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <input type="text" class="form-control" id="txtTNV" placeholder="Họ tên">
+                                    </div>
+                                    <div class="col-3 col-sm-3">
+                                        <span id="tbMa">(*)</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group p-1">
+                                    <div class="col-3 col-sm-3">
+                                        <label for="">Ngày vào công ty</label>
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <input type="text" name="Date" id="txtDate" class="form-control" placeholder="mm/dd/yyyy">
+                                    </div>
+                                    <div class="col-6 col-sm-6">
+                                        <span id="tbDate">(*)</span>
+                                    </div>
+                                </div>
+                                <div class="row form-group p-1">
+                                    <div class="col-4 col-sm-3">
+                                        <label for="">Chức vụ</label>
+                                    </div>
+                                    <div class="col-8 col-sm-6 p-1">
+                                        <input type="radio" name="chucvu" class="chucvu" value="Cán bộ quản lý">Cán bộ quản lý
+                                        <input type="radio" name="chucvu" class="chucvu" value="Nhân viên">Nhân viên
+                                    </div>
+                                    <div class="col-8 col-sm-6">
+                                        <span id="tbCV">(*)</span>
+                                    </div>
+                                <div class="row form-group p-1">
+                                    <div class="col-4 col-sm-3">
+                                        <label for="">Bậc lương</label>
+                                    </div>
+                                    <div class="col-8 col-sm-6">
+                                        <select name="chucvu" id="txtCV" class="form-control">
+                                            <option value="1.86">Bậc 1</option>
+                                            <option value="1.92">Bậc 2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group p-1">
+                                    <div class="col-4 col-sm-3">
+                                        <label for="">Hệ số</label>
+                                    </div>
+                                    <div class="col-8 col-sm-6">
+                                        <input type="text" name="heso" class="form-control" id="heso" disabled>
+                                    </div>
+                                </div>
+                                <br>
+                                    <div class="row form-group p-1">
+                                        <div class="col-sm-2">
+                                            <input type="button" value="Thêm" id="btnSave" class="btn btn-block">
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <div class=" col-4 col-sm-3"></div>
+                            <div class="col-2 col-sm-2">
+                                <button class="btn close"> Close </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
